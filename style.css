@@ -47,7 +47,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .directions-container{
-      font-size: 25px;
+      font-size: 22.5px;
       font-weight: 500;
     }
     .past{
