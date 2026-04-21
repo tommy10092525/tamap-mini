@@ -15,7 +15,7 @@ const facilitiesTimesMapping = {
   economics: 5,
   health: 4,
   sport: 8,
-  gym: 15,
+  gym: 15, 
 }
 let [now,station,isComingToHosei]=[new Date(),"nishihachioji",true]
 
@@ -69,6 +69,24 @@ const renderHTML=({now,station,isComingToHosei})=>{
   $(".overlay-social>span").textContent=minuteToTime(futureFirst.arriveHour*60+futureFirst.arriveMinute+facilitiesTimesMapping.health)
   $(".overlay-gym>span").textContent=minuteToTime(futureFirst.arriveHour*60+futureFirst.arriveMinute+facilitiesTimesMapping.gym)
   $(".overlay-sport>span").textContent=minuteToTime(futureFirst.arriveHour*60+futureFirst.arriveMinute+facilitiesTimesMapping.sport)
+
+  switch(station){
+    case "nishihachioji":
+      $("[data-station='nishihachioji']").style.transform="scale(105%)"
+      $("[data-station='mejirodai']").style.transform="";
+      $("[data-station='aihara']").style.transform="";
+      break;
+    case "mejirodai":
+      $("[data-station='mejirodai']").style.transform="scale(105%)";
+      $("[data-station='nishihachioji']").style.transform="";
+      $("[data-station='aihara']").style.transform="";
+      break;
+    case "aihara":
+      $("[data-station='aihara']").style.transform="scale(105%)";
+      $("[data-station='mejirodai']").style.transform="";
+      $("[data-station='nishihachioji']").style.transform="";
+      break;
+  }
 }
 
 const render=()=>{

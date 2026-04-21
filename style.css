@@ -68,6 +68,8 @@
     border-radius: 10px;
     font-weight: 500;
     font-size: 18px;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   .buttons-container{
     display: grid;
