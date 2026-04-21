@@ -61,7 +61,7 @@
     }
   }
   button{
-    background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+    background-color: color-mix(in oklab, var(--color-white) 30%, transparent);
     border:none;
     padding: 0.5rem;
     font-size: 15px;
@@ -70,6 +70,10 @@
     font-size: 18px;
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  button.active{
+    transform: scale(105%);
+    background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
   }
   .buttons-container{
     display: grid;
