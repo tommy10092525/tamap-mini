@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link href="https://unpkg.com/sanitize.css" rel="stylesheet" /> -->
+  <title>たまっぷ</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="./images/tamap_logo.webp" alt="たまっぷのロゴ" id="tamap-logo">
+    </div>
+    <section id="first-card" class="card">
+      <div class="directions-container">
+        <div class="departure">西八王子</div>
+        <div class="arrival">法政大学</div>
+      </div>
+      <div class="past">
+        <div class="times-container second">
+          <p class="departure"></p>
+          <p class="arrival"></p>
+        </div>
+        <div class="times-container first">
+          <p class="departure"></p>
+          <p class="arrival"></p>
+        </div>
+      </div>
+      <div class="future">
+        <div class="times-container first">
+          <p class="departure"></p>
+          <p class="arrival"></p>
+        </div>
+        <div class="times-container second">
+          <p class="departure"></p>
+          <p class="arrival"></p>
+        </div>
+        <div class="times-container third">
+          <p class="departure"></p>
+          <p class="arrival"></p>
+        </div>
+      </div>
+      <button type="button">
+        ⇔　左右入替
+      </button>
+    </section>
+    <section class="card">
+      <div class="buttons-container">
+        <button type="button" data-station="nishihachioji">西八王子</button>
+        <button type="button" data-station="mejirodai">めじろ台</button>
+        <button type="button" data-station="aihara">相原</button>
+      </div>
+    </section>
+    <section class="card" id="second-card">
+      <img src="./images/Map.webp" alt="">
+      <div class="overlay card overlay-economics">経済学部<br><span></span></div>
+      <div class="overlay card overlay-gym">体育館<br><span></span></div>
+      <div class="overlay card overlay-social">社会学部<br><span></span></div>
+      <div class="overlay card overlay-sport">スポ健<br><span></span></div>
+    </section>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
