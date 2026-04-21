@@ -70,23 +70,6 @@ const renderHTML=({now,station,isComingToHosei})=>{
   $(".overlay-gym>span").textContent=minuteToTime(futureFirst.arriveHour*60+futureFirst.arriveMinute+facilitiesTimesMapping.gym)
   $(".overlay-sport>span").textContent=minuteToTime(futureFirst.arriveHour*60+futureFirst.arriveMinute+facilitiesTimesMapping.sport)
 
-  switch(station){
-    case "nishihachioji":
-      $("[data-station='nishihachioji']").style.transform="scale(105%)"
-      $("[data-station='mejirodai']").style.transform="";
-      $("[data-station='aihara']").style.transform="";
-      break;
-    case "mejirodai":
-      $("[data-station='mejirodai']").style.transform="scale(105%)";
-      $("[data-station='nishihachioji']").style.transform="";
-      $("[data-station='aihara']").style.transform="";
-      break;
-    case "aihara":
-      $("[data-station='aihara']").style.transform="scale(105%)";
-      $("[data-station='mejirodai']").style.transform="";
-      $("[data-station='nishihachioji']").style.transform="";
-      break;
-  }
 }
 
 const render=()=>{
@@ -97,14 +80,29 @@ render()
 
 $("[data-station='nishihachioji']").addEventListener("click",e=>{
   station="nishihachioji"
+
+  $("[data-station='nishihachioji']").classList.add("active")
+  $("[data-station='mejirodai']").classList.remove("active")
+  $("[data-station='aihara']").classList.remove("active")
+  
   render()
 })
 $("[data-station='mejirodai']").addEventListener("click",e=>{
   station="mejirodai"
+  
+  $("[data-station='mejirodai']").classList.add("active")
+  $("[data-station='nishihachioji']").classList.remove("active")
+  $("[data-station='aihara']").classList.remove("active")
+  
   render()
 })
 $("[data-station='aihara']").addEventListener("click",e=>{
   station="aihara"
+  
+  $("[data-station='aihara']").classList.add("active")
+  $("[data-station='nishihachioji']").classList.remove("active")
+  $("[data-station='mejirodai']").classList.remove("active")
+
   render()
 })
 
